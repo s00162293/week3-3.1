@@ -7,17 +7,26 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Shop.Models;
+using Shop.DAL;
 
 namespace Shop.Controllers
 {
     public class ShopItemsController : Controller
     {
-        private RepoPatternContext db = new RepoPatternContext();
+        private IShopItemsRepository shopRepo;
 
-        // GET: ShopItems
+        public ShopItemsController()
+        {
+            shopRepo = new ShopItemRepository(new RepoPatternContext());
+        }
+        //private RepoPatternContext db = new RepoPatternContext();
+
+
+
+        //// GET: ShopItems
         public ActionResult Index()
         {
-            return View(db.ShopItems.ToList());
+            return View(shopRepo.GetItems());
         }
 
         // GET: ShopItems/Details/5

@@ -12,6 +12,7 @@ namespace Shop.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true; //everytime models change it will scaffoled up
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Shop.Models.RepoPatternContext context)

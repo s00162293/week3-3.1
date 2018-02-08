@@ -41,6 +41,9 @@
             @Html.DisplayFor(modelItem => item.ImageURL)
         </td>
         <td>
+            <img src="@Url.Content(item.ImageURL)" alt="Image" width="64" height="64"/>
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
