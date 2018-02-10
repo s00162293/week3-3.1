@@ -16,5 +16,6 @@ namespace Shop.DAL
         void UpdateItem(ShopItem item);
         void DeleteItem(int itemID);
         void Save();
+        
     }
 }

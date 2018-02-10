@@ -31,7 +31,7 @@ namespace Shop.DAL
 
         public ShopItem GetItemByID(int itemID)
         {
-            return context.ShopItems.Find(itemID);           
+            return context.ShopItems.Find(itemID);
         }
 
         public IEnumerable<ShopItem> GetItems()
