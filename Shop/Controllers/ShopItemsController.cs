@@ -30,19 +30,10 @@ namespace Shop.Controllers
         }
 
         // GET: ShopItems/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ShopItem shopItem = db.ShopItems.Find(id);
-        //    if (shopItem == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(shopItem);
-        //}
+        public ActionResult Details(int id)
+        {
+            return View(shopRepo.GetItemByID(id));
+        }
 
         // GET: ShopItems/Create
         public ActionResult Create()
@@ -68,19 +59,10 @@ namespace Shop.Controllers
         //}
 
         //// GET: ShopItems/Edit/5
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ShopItem shopItem = db.ShopItems.Find(id);
-        //    if (shopItem == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(shopItem);
-        //}
+        public ActionResult Edit(int id)
+        {
+            return View(shopRepo.GetItemByID(id));
+        }
 
         //// POST: ShopItems/Edit/5
         //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -101,16 +83,7 @@ namespace Shop.Controllers
         //// GET: ShopItems/Delete/5
         //public ActionResult Delete(int? id)
         //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ShopItem shopItem = db.ShopItems.Find(id);
-        //    if (shopItem == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(shopItem);
+        //    return View(shopRepo.DeleteItem(id));
         //}
 
         //// POST: ShopItems/Delete/5
@@ -118,10 +91,7 @@ namespace Shop.Controllers
         //[ValidateAntiForgeryToken]
         //public ActionResult DeleteConfirmed(int id)
         //{
-        //    ShopItem shopItem = db.ShopItems.Find(id);
-        //    db.ShopItems.Remove(shopItem);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
+        //    return View(shopRepo.DeleteItem(id));
         //}
 
         //protected override void Dispose(bool disposing)
