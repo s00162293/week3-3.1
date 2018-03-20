@@ -40,6 +40,10 @@ namespace Shop.Migrations
 
             context.SaveChanges();
 
+
+
+
+            //
         }
     }
 }
